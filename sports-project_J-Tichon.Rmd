@@ -1,0 +1,88 @@
+---
+title: "Winnipeg Varsity High School Soccer League"
+author: "Jenna G. Tichon"
+date: "Feb 14, 2022"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+In this report, we are trying to see how many points teams in the Winnipeg Varsity High School Soccer League typically scored based on the number of games they won throughout the season. 
+
+In the table below we can find the collected data for the 2021 spring league for the 6 teams.
+
+```{r, echo = FALSE, message = FALSE}
+library(tidyverse)
+point <- c(13, 19, 25, 28, 29, 33)
+win <- c(7, 8, 8, 9, 12, 11)
+values <- data.frame(point, win)
+knitr::kable(values, col.names = c("Points", "Wins"))
+```
+
+\begin{footnotesize}
+Season Standings (2022) *Winnipeg Varsity Soccer League* \url{www.website.com/4939sjkd2944/stats/2021/monthly/report/team/stats-summary}
+\end{footnotesize}
+
+To examine the distributions, let's look at a scatterplot of the wins plotted on point scored and histograms to show the individual distributions of points and wins.
+
+```{r, echo = FALSE, out.width="80%"}
+plot(point, win, xlab = "Points Scored", ylab = "Wins", main = "Points Scored Based on Wins", sub = "in the Winnipeg Varsity High School Soccer League")
+```
+
+```{r, echo = FALSE, out.width="80%"}
+hist(point, xlab = "Points Scored", main = "Distribution of Points")
+```
+
+```{r, echo = FALSE, out.width="80%"}
+hist(win, xlab = "Wins", main = "Distribution of Season Wins")
+```
+
+From the scatterplot, we can see that the number of wins increases based on the number of points scored. Based on the histograms, the distribution of number of points scored looks fairly uniform while the distribution of the number of wins is right-skewed.
+
+## Numerical Summary
+
+Now that we know the shapes, we can examine some numerical summaries which have been calculated in R and then re-summarized below the R calculations.
+
+```{r}
+# Means
+mean(win)
+mean(point)
+# Standard Deviations
+sd(win)
+sd(point)
+# Correlation and Coefficient of Determination
+cor(win,point)
+cor(win,point)^2
+# Max and Minimum Values
+max(win)
+min(win)
+max(point)
+min(point)
+```
+
+We can summarize the stats in the following table:
+
+| Statistic           | Wins  | Points |
+|---------------------|-------|--------|
+| Mean                | 9.167 | 24.5   |
+| Standard  Deviation | 1.941 | 7.314  |
+| Max                 | 12    | 7      |
+| Min                 | 33    | 13     |                                                     
+
+We also have that the correlation, $r$, is 0.8242 and the coefficient of determination, $r^2$, is 0.6793.
+
+ 
+
+
+
+## Conclusion
+
+In conclusion, we can see that the teams with more wins in the Winnipeg Varisty High School Soccer League tended to score more points. While the number of wins was fairly uniform, the teams that won more games scored marginally more wins per game.

@@ -1,0 +1,183 @@
+---
+title: "R Workshop - MISA"
+author: "Dr. J. Tichon"
+date: "Feb 17, 2022"
+output: 
+  beamer_presentation:
+    theme: "Berlin"
+    colortheme: "dolphin"
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Getting Started in R
+
+### What is R?
+
+R is a statistical programming language that excels at tasks that involve data management, statistical analysis, data visualization,and simulation.
+
+### What is R?
+
+However, R is so much more than a programming language:
+
+- Report writing
+- Data management
+- Creating dashboards
+- Creating HTML pages
+- Powerful data visualization tools
+- Interactive web based demonstrations
+
+### Who Uses R?
+
+- Statisticians
+- Any discipline that touches data 
+- Front-end developers
+- News sites
+- E-commerce businesses
+- Data analytics
+
+### Why Should You Learn R?
+
+- Business of data management, cleaning, and organization is quicker and more powerful
+- Creates reports that seamlessly integrate text, math, code, graphs 
+- Easy to share with people that require different formats: csv , html, PDF, Word
+- Free, heavily supported, and found throughout every discipline and increasingly major businesses
+- Creates accessible, and powerful dashboards for internal use and for websites
+
+### Talk Outline
+
+- Company/Business Dashboards
+- Data Visualization 
+- Educational Possibilities
+- Getting Setup with R
+- Personal Documents
+- Working with Data
+
+### Company/Business Dashboards
+
+- [Shiny Gallery](https://shiny.rstudio.com/gallery/)
+- [Career Pathfinder](https://shiny.rstudio.com/gallery/career-pathfinder.html)
+- [Freedom of Press](https://shiny.rstudio.com/gallery/freedom-press-index.html)
+
+### Data Visualization
+
+- [Tidy Tuesday Github](https://github.com/rfordatascience/tidytuesday)
+- [#TidyTuesday](https://twitter.com/search?q=%23tidytuesday&src=typed_query)
+- [BBC and ggplot](https://medium.com/bbc-visual-and-data-journalism/how-the-bbc-visual-and-data-journalism-team-works-with-graphics-in-r-ed0b35693535)
+
+### Educational Possibilities
+
+- [Permutation Lab](https://jenna-tichon.shinyapps.io/Permutation-Tests/)
+- [Regression Tutorial with Learnr](https://jenna-tichon.shinyapps.io/RegressionTutorial/)
+- [Slope Simulation](https://jenna-tichon.shinyapps.io/Slope-Distribution/)
+
+## Getting Setup with R
+
+### Installing Software
+
+1- Download R (https://cran.r-project.org/mirrors.html)
+
+2- Download R Studio (https://www.rstudio.com/products/rstudio/download/)
+
+3- Install tinytex by running the following two lines of code in console:
+
+install.packages('tinytex')
+
+tinytex::install_tinytex()
+
+### R Studio Cloud
+
+There is a web based cloud version of R Studio at (http://rstudio.cloud)
+
+Every account has 25 free hours a month, can purchase additional time for various price points.
+
+### Opening Up R Studio
+
+- Take a look at the basics of R Studio
+- [YouTube tutorial of main parts of the program](https://youtu.be/NgoGsL6ZjH4)
+
+### Projects for Workflow
+
+- For every new task you work on in R Studio, you can create a project rooted to a folder so that it always looks how you left it.
+
+## Personal Documents
+
+### .r files
+
+- .r files function as plain text documents in which you can write code without having to worry about it running
+- See anova.R
+
+### Slides 
+
+- Presentations can be made in Beamer
+- These slides are simple but you can do anything you'd normally do plus more like...
+
+### Slides - Typset math
+
+$$\int_{0}^4\dfrac{e^{-x-2}}{4x}$$
+
+### Slides - Include code
+
+
+
+```{r, echo = TRUE}
+cars.lm <- lm(mpg~wt, data = mtcars)
+cars.lm
+```
+
+### Include Plots with Code
+
+```{r, echo = TRUE, out.width="80%"}
+plot(mpg~wt, data = mtcars,
+     xlab = "Weight (tonnes)", ylab = "Mileage (mpg)")
+```
+
+### Include Plots Without Code
+
+```{r}
+plot(mpg~wt, data = mtcars,
+     xlab = "Weight (tonnes)", ylab = "Mileage (mpg)")
+```
+
+### Create HTML, PDF, or Word Document
+
+- R Markdown (.rmd) files combine math typeseting (LaTeX), r coding, and Markdown formatting to create PDF, HTML, or Word documents.
+- See sports-project_J-Tichon.rmd
+
+## Working with Data
+
+### Writing Data Directly with Vectors
+
+```{r, echo = TRUE}
+x <- c(4, 7, 8, 9)
+mean(x)
+```
+
+### Writing Multiple Vectors to a Dataframe
+
+```{r, echo = TRUE}
+name <- c("Jean", "Jorts")
+colour <- c("Tortie", "Orange")
+weight <- c(8, 12)
+dislikes <- c("Union Busting", "Being Buttered")
+catInfo <- data.frame(name, colour, weight, dislikes)
+```
+
+### Writing Multiple Vectors to a Dataframe
+
+```{r, echo = TRUE}
+catInfo
+```
+
+### Importing and Cleaning Data from a .csv File
+
+- See census-code-clean.R
+
+### Good Resources for Starting
+
+- [R For Data Science](https://r4ds.had.co.nz/)
+- [R For the Rest of Us](https://rfortherestofus.com/)
+
