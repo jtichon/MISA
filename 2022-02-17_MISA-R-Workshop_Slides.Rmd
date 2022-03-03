@@ -108,7 +108,7 @@ Every account has 25 free hours a month, can purchase additional time for variou
 ### .r files
 
 - .r files function as plain text documents in which you can write code without having to worry about it running
-- See anova.R
+- See anova.R 
 
 ### Slides 
 
@@ -139,7 +139,7 @@ plot(mpg~wt, data = mtcars,
 
 ```{r}
 plot(mpg~wt, data = mtcars,
-     xlab = "Weight (tonnes)", ylab = "Mileage (mpg)")
+     xlab = "weight (tonnes)", ylab = "mileage (mpg)")
 ```
 
 ### Create HTML, PDF, or Word Document
